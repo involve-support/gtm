@@ -106,39 +106,21 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 var sendPixel = require('sendPixel');
 var encodeUriComponent = require('encodeUriComponent');
 
-if ( data.offerId === undefined ) {
-	var offerId = null;
-} else {
-	var offerId = encodeUriComponent(data.offerId);
-}
+// required form fields
+var offerId = encodeUriComponent(data.offerId);
+var orderNumber = encodeUriComponent(data.orderNumber);
+var currencyCode = encodeUriComponent(data.currencyCode);
+var amount = encodeUriComponent(data.amount);
 
-if ( data.orderNumber === undefined ) {
-	var orderNumber = null;
-} else {
-	var orderNumber = encodeUriComponent(data.orderNumber);
-}
+// optional form fields
+var customerType = null;
+var voucherCode = null;
 
-if ( data.currencyCode === undefined ) {
-	var currencyCode = null;
-} else {
-	var currencyCode = encodeUriComponent(data.currencyCode);
-}
-
-if ( data.amount === undefined ) {
-	var amount = null;
-} else {
-	var amount = encodeUriComponent(data.amount);
-}
-
-if ( data.customerType === undefined ) {
-	var customerType = null;
-} else {
+if ( data.customerType ) {
 	var customerType = encodeUriComponent(data.customerType);
 }
 
-if ( data.voucherCode === undefined ) {
-	var voucherCode = null;
-} else {
+if ( data.voucherCode ) {
 	var voucherCode = encodeUriComponent(data.voucherCode);
 }
 
@@ -150,4 +132,4 @@ sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
 
 ___NOTES___
 
-Created on 14/08/2019, 12:33:17
+Created on 20/08/2019, 11:09:04
