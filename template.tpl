@@ -15,7 +15,7 @@ ___INFO___
 {
   "displayName": "Involve Conversion Tag",
   "description": "",
-  "categories": ["ADVERTISING", "AFFILIATE_MARKETING", "CONVERSION_TRACKING"],
+  "categories": ["ADVERTISING", "AFFILIATE_MARKETING", "CONVERSIONS"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -146,3 +146,4 @@ sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
 ___NOTES___
 
 Created on 20/08/2019, 11:09:04
+1:09:04

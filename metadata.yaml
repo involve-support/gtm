@@ -1,0 +1,5 @@
+homepage: "https://involve.asia/"
+documentation: "https://help.involve.asia/hc/en-us/categories/115000362111-Advertiser-Guide"
+versions:
+  - sha: 49a2b9bd64ae14042afa6e5a9438471a
+    ​changeNotes: "Initial Release."
