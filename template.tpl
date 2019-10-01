@@ -1,14 +1,9 @@
 ﻿___TERMS_OF_SERVICE___
 
-
 By creating or modifying this file you agree to Google Tag Manager's Community
-
 Template Gallery Developer Terms of Service available at
-
-https://developers.google.com/tag-manager/gallery-tos (or such other URL as
-
-Google may provide), as modified from time to time.
-
+https://developers.google.com/tag-manager/gallery-tos
+(or such other URL as Google may provide), as modified from time to time.
 
 ___INFO___
 
@@ -146,4 +141,3 @@ sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
 ___NOTES___
 
 Created on 20/08/2019, 11:09:04
-1:09:04
