@@ -9,7 +9,7 @@ ___INFO___
 
 {
   "displayName": "Involve Conversion Tag",
-  "description": "",
+  "description": "Conversion tag for Involve. Add the Involve Conversion Tag to the Thank You / Order Confirmation page of your website.",
   "categories": ["ADVERTISING", "AFFILIATE_MARKETING", "CONVERSIONS"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
