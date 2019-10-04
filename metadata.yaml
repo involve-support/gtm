@@ -1,5 +1,5 @@
 homepage: "https://involve.asia/"
-documentation: "https://help.involve.asia/hc/en-us/categories/115000362111-Advertiser-Guide"
+documentation: "https://help.involve.asia/hc/en-us/articles/360034373612-How-To-Implement-Involve-Conversion-Pixel-In-Google-Tag-Manager"
 versions:
-  - sha: fd8eba2f998f838ddc9a5ae420ca63296cf41682
-    ​changeNotes: "whitespace cleanup"
+  - sha: 6dcadde3dc443ece6d129af26b3b7017cb784ee3
+    ​changeNotes: "added descriptions"
