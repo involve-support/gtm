@@ -1,5 +1,5 @@
 homepage: "https://involve.asia/"
 documentation: "https://help.involve.asia/hc/en-us/articles/360034373612-How-To-Implement-Involve-Conversion-Pixel-In-Google-Tag-Manager"
 versions:
-  - sha: 6dcadde3dc443ece6d129af26b3b7017cb784ee3
-    ​changeNotes: "added descriptions"
+  - sha: 6f8fdcffa08dcbe50ddf053cac82276ed8144e2d
+    ​changeNotes: "remove optional checking for customerType and voucherCode variable"
