@@ -1,16 +1,13 @@
-﻿___TERMS_OF_SERVICE___
-
-By creating or modifying this file you agree to Google Tag Manager's Community
-Template Gallery Developer Terms of Service available at
-https://developers.google.com/tag-manager/gallery-tos
-(or such other URL as Google may provide), as modified from time to time.
-
 ___INFO___
 
 {
   "displayName": "Involve Conversion Tag",
   "description": "Conversion tag for Involve. Add the Involve Conversion Tag to the Thank You / Order Confirmation page of your website.",
-  "categories": ["ADVERTISING", "AFFILIATE_MARKETING", "CONVERSIONS"],
+  "categories": [
+    "ADVERTISING",
+    "AFFILIATE_MARKETING",
+    "CONVERSIONS"
+  ],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -76,6 +73,26 @@ ___TEMPLATE_PARAMETERS___
 ]
 
 
+___SANDBOXED_JS_FOR_WEB_TEMPLATE___
+
+// require relevant API
+var sendPixel = require('sendPixel');
+var encodeUriComponent = require('encodeUriComponent');
+
+// required form fields
+var offerId = encodeUriComponent(data.offerId);
+var orderNumber = encodeUriComponent(data.orderNumber);
+var currencyCode = encodeUriComponent(data.currencyCode);
+var amount = encodeUriComponent(data.amount);
+var customerType = encodeUriComponent(data.customerType);
+var voucherCode = encodeUriComponent(data.voucherCode);
+
+// use the provided APIs to do things like send pixels
+var conversionURL = 'https://invol.co/aff_lg?currency=' + currencyCode + '&amount=' + amount + '&adv_sub=' + orderNumber + '&adv_sub2=' + customerType + '&adv_sub3=' + voucherCode + '&offer_id=' + offerId;
+
+sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
+
+
 ___WEB_PERMISSIONS___
 
 [
@@ -108,36 +125,13 @@ ___WEB_PERMISSIONS___
 ]
 
 
-___SANDBOXED_JS_FOR_WEB_TEMPLATE___
+___TESTS___
 
-// require relevant API
-var sendPixel = require('sendPixel');
-var encodeUriComponent = require('encodeUriComponent');
-
-// required form fields
-var offerId = encodeUriComponent(data.offerId);
-var orderNumber = encodeUriComponent(data.orderNumber);
-var currencyCode = encodeUriComponent(data.currencyCode);
-var amount = encodeUriComponent(data.amount);
-
-// optional form fields
-var customerType = null;
-var voucherCode = null;
-
-if ( data.customerType ) {
-	var customerType = encodeUriComponent(data.customerType);
-}
-
-if ( data.voucherCode ) {
-	var voucherCode = encodeUriComponent(data.voucherCode);
-}
-
-// use the provided APIs to do things like send pixels
-var conversionURL = 'https://invol.co/aff_lg?currency=' + currencyCode + '&amount=' + amount + '&adv_sub=' + orderNumber + '&adv_sub2=' + customerType + '&adv_sub3=' + voucherCode + '&offer_id=' + offerId;
-
-sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
+scenarios: []
 
 
 ___NOTES___
 
 Created on 20/08/2019, 11:09:04
+
+
