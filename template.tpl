@@ -111,21 +111,31 @@ ___WEB_PERMISSIONS___
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 // require relevant API
-var sendPixel = require('sendPixel');
-var encodeUriComponent = require('encodeUriComponent');
+const sendPixel = require('sendPixel');
+const encodeUriComponent = require('encodeUriComponent');
 
 // required form fields
-var offerId = encodeUriComponent(data.offerId);
-var orderNumber = encodeUriComponent(data.orderNumber);
-var currencyCode = encodeUriComponent(data.currencyCode);
-var amount = encodeUriComponent(data.amount);
-var customerType = encodeUriComponent(data.customerType);
-var voucherCode = encodeUriComponent(data.voucherCode);
+var offerId = encodeUriComponent(data['offerId']);
+var orderNumber = encodeUriComponent(data['orderNumber']);
+var currencyCode = encodeUriComponent(data['currencyCode']);
+var amount = encodeUriComponent(data['amount']);
+
+// optional form fields
+var customerType = '';
+var voucherCode = '';
+
+if (data['customerType'] && data['customerType'] !== "") {
+  customerType = encodeUriComponent(data['customerType']);
+}
+
+if (data['voucherCode'] && data['voucherCode'] !== "") {
+  voucherCode = encodeUriComponent(data['voucherCode']);
+}
 
 // use the provided APIs to do things like send pixels
-var conversionURL = 'https://invol.co/aff_lg?currency=' + currencyCode + '&amount=' + amount + '&adv_sub=' + orderNumber + '&adv_sub2=' + customerType + '&adv_sub3=' + voucherCode + '&offer_id=' + offerId;
+const conversionURL = 'https://invol.co/aff_lg?currency=' + currencyCode + '&amount=' + amount + '&adv_sub=' + orderNumber + '&adv_sub2=' + customerType + '&adv_sub3=' + voucherCode + '&offer_id=' + offerId;
 
-sendPixel(conversionURL, data.gtmOnSuccess, data.gtmOnFailure);
+sendPixel(conversionURL, data['gtmOnSuccess'], data['gtmOnFailure']);
 
 
 ___NOTES___
